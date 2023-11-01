@@ -23,8 +23,8 @@ public class ProductRepositoryImpl implements ProductRepositoryCustom {
         return queryFactory.select(Projections.constructor(
                         ProductDto.ProductResponse.class,
                         product.id,
-                        shop.name,
-                        category.name,
+                        product.shop.name,
+                        product.category.name,
                         product.name,
                         product.price))
                 .from(product)
