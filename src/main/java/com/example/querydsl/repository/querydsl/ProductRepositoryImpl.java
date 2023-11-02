@@ -8,9 +8,9 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-import static com.example.querydsl.entity.QCategory.category;
 import static com.example.querydsl.entity.QProduct.product;
 import static com.example.querydsl.entity.QShop.shop;
+import static com.example.querydsl.entity.QCategory.category;
 
 @RequiredArgsConstructor
 public class ProductRepositoryImpl implements ProductRepositoryCustom {
@@ -23,8 +23,8 @@ public class ProductRepositoryImpl implements ProductRepositoryCustom {
         return queryFactory.select(Projections.constructor(
                         ProductDto.ProductResponse.class,
                         product.id,
-                        product.shop.name,
-                        product.category.name,
+                        shop.name,
+                        category.name,
                         product.name,
                         product.price))
                 .from(product)

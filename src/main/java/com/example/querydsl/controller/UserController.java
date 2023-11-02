@@ -1,6 +1,7 @@
 package com.example.querydsl.controller;
 
 import com.example.querydsl.dto.ShopDto;
+import com.example.querydsl.dto.UserDto;
 import com.example.querydsl.entity.User;
 import com.example.querydsl.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class UserController {
     @GetMapping
     public ResponseEntity<?> getUsers() {
 
-        List<User> userList = userService.getUsers();
+        List<UserDto.UserResponse> userList = userService.getUsers();
 
         return ResponseEntity.ok(userList);
     }

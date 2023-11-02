@@ -1,10 +1,12 @@
 package com.example.querydsl.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Builder
 @Getter
@@ -22,6 +24,7 @@ public class User {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "user")
     private UserInfo userInfo;
 }
