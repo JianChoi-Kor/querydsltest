@@ -1,13 +1,13 @@
 package com.example.querydsl.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
+@ToString
 @Builder
 @Getter
 @AllArgsConstructor

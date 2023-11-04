@@ -30,6 +30,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
                         user.name,
                         userInfo.info))
                 .from(user)
+                .join(userInfo).on(userInfo.user.eq(user))
                 .fetch();
     }
 }
